@@ -9,8 +9,16 @@
         <title>JSP Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            .bg-custom {
+                background-image: url('https://static.vecteezy.com/system/resources/previews/018/813/085/non_2x/light-yellow-background-with-spots-vector.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+            }
+        </style>
     </head>
-    <body>
+    <body class="bg-custom">
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Inicio</a>
@@ -44,9 +52,10 @@
             <% ArrayList<String> productos = (ArrayList) request.getAttribute("producto"); %>
             <ul>
                 <% if (productos != null) { %>
-                <p style="text-align: center;">Se ha agregado con éxito</p>
+                <p style="text-align: center " class="text-success display-3">Se ha agregado con éxito</p>
+                <br>
                 <% for (String prod : productos) {%>
-                <li style="text-align: center;"><%= prod%></li>
+                <li style="text-align: center" class="mt-3";><%= prod%></li>
                     <% } %>
                     <% }%>
             </ul>
@@ -56,24 +65,24 @@
         <div class="container mt-5 w-75">
             <form action="/FormProductosIN5CM/producto-servlet/" method="post" enctype="multipart/form-data">
                 <div class="form-floating mt-5">
-                    <input class="form-control" id="nombreProducto" name="nombreProducto" type=text placeholder="">
+                    <input class="form-control bg-info-subtle text-info-emphasis" id="nombreProducto" name="nombreProducto" type=text placeholder="">
                     <label for="nombreProducto">Nombre de Producto</label>
                 </div>
 
                 <div class="form-floating mt-4">
-                    <textarea class="form-control" placeholder="" id="descripcionProducto" name="descripcionProducto"></textarea>
+                    <textarea class="form-control bg-info-subtle text-info-emphasis" placeholder="" id="descripcionProducto" name="descripcionProducto"></textarea>
                     <label for="descripcionProducto">Descripcion del Producto</label>
                 </div>
 
                 <div class="form-floating mt-4">
-                    <input class="form-control" id="marcaProducto" name="marcaProducto" type=text placeholder="">
+                    <input class="form-control bg-info-subtle text-info-emphasis" id="marcaProducto" name="marcaProducto" type=text placeholder="">
                     <label for="marcaProducto">Marca del Producto</label>
                 </div>
 
                 <div class="input-group mb-3 mt-4">
-                    <span class="input-group-text">Q</span>
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="precioProducto">
-                    <span class="input-group-text">.00</span>
+                    <span class="input-group-text bg-success text-white">Q</span>
+                    <input type="text" class="form-control bg-info-subtle text-info-emphasis" aria-label="Amount (to the nearest dollar)" name="precioProducto">
+                    <span class="input-group-text bg-success text-white">.00</span>
                 </div>
 
                 <div>
