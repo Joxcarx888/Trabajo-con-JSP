@@ -1,1 +1,6 @@
 org\josemorejon\webapp\servlet\ProductoServlet.class
+Main.class
+org\josemorejon\webapp\util\JpaUtil.class
+org\josemorejon\webapp\service\ProductoService.class
+org\josemorejon\webapp\service\IProductoService.class
+org\josemorejon\webapp\model\Producto.class
